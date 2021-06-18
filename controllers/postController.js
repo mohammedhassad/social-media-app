@@ -188,7 +188,7 @@ const comment = catchAsync(async (req, res, next) => {
   comment.postedBy = req.user.id;
 
   const schema = Joi.object({
-    text: Joi.string().alphanum().trim().required(),
+    text: Joi.string().trim().required(),
     postedBy: Joi.objectId().required(),
   });
 

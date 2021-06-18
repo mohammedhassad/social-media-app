@@ -114,7 +114,7 @@ const Comments = ({ postId, comments, updateComments }) => {
         <Avatar
           className={classes.smallAvatar}
           src={
-            "http://localhost:4000/api/users/photo/" +
+            "/api/users/photo/" +
             isAuthenticated().user._id
           }
         />
@@ -169,7 +169,7 @@ const Comments = ({ postId, comments, updateComments }) => {
             <Avatar
               className={classes.smallAvatar}
               src={
-                "http://localhost:4000/api/users/photo/" + item.postedBy?._id
+                "/api/users/photo/" + item.postedBy?._id
               }
             />
             <Box ml={2} flex={1}>
