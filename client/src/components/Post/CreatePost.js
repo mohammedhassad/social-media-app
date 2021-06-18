@@ -28,6 +28,7 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
   text: Yup.string().required(),
+  photo: Yup.mixed()
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -93,6 +94,7 @@ const CreatePost = ({ addUpdate }) => {
     values.photo && postData.append("photo", values.photo);
 
     create({ jwt: isAuthenticated().token }, postData).then((data) => {
+
       if (data?.status === "success") {
         errors.resetForm();
         setPostPhoto("");

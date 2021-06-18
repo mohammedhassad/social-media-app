@@ -27,7 +27,7 @@ const create = (req, res, next) => {
       }
 
       const schema = Joi.object().keys({
-        text: Joi.string().alphanum().trim().required(),
+        text: Joi.string().trim().required(),
       });
 
       const { error } = schema.validate(fields);
