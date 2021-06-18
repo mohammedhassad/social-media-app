@@ -36,6 +36,18 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
+if (config.env === "production") {
+  app.use(express.static(path.join(__dirname, "client", "build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("App runnning on development envirenment...");
+  });
+}
+
 // 7. Handle Error
 // Catch unauthorised errors
 app.use(globalErrorHandler);
