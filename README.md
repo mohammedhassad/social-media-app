@@ -1,4 +1,4 @@
-# Natours Application
+# Social Media Application
 built using modern technologies: NodeJs, ExpressJs, MongoDB, Mongoose, ReactJs, Material-ui and some packages.
 
  ## Demo   
